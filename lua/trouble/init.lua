@@ -17,6 +17,7 @@ function Trouble.setup(options)
   config.setup(options)
   util.fix_mode(config.options)
   colors.setup()
+  require("trouble.providers.diagnostic").setup()
 end
 
 function Trouble.close()
