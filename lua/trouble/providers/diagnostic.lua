@@ -22,6 +22,10 @@ M.show = function(namespace, bufnr, diagnostics, opts)
     ns.user_data.trouble_items = {}
   end
 
+  vim.notify(
+    "show: \nnamespace: " .. namespace .. "\nbufnr: " .. bufnr .. "\ndiagnostics: " .. vim.inspect(diagnostics)
+  )
+
   local items = {}
   for _, diag in ipairs(diagnostics) do
     local item = util.process_item(diag, bufnr)
